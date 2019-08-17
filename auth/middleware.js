@@ -1,9 +1,9 @@
 const User = require('../user/model')
 const { toData } = require('./jwt')
 
-function auth (req, res, next) {
+function auth(req, res, next) {
   const auth = req.headers.authorization && req.headers.authorization.split(' ')
-  console.log('auth test:', auth)
+
   if (auth && auth[0] === 'Bearer' && auth[1]) {
     try {
       const data = toData(auth[1])

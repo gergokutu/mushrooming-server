@@ -33,7 +33,6 @@ router.get(
 router.post(
   '/forest',
   async (req, res, next) => {
-    console.log('forest post req.body:', req.body)
     const { name } = req.body
     const entity = await Forest.create({
       name
@@ -149,7 +148,6 @@ router.put(
 router.post(
   '/user',
   async (req, res, next) => {
-    console.log("POST user test")
     const { nickname, email, password, image } = req.body
     const user = await User.findOne({ where: { email: email } })
 
@@ -175,7 +173,6 @@ router.post(
 router.post(
   '/login',
   (req, res, next) => {
-    console.log("req.body", req.body.email, req.body.password)
     User
       .findOne({
         where: {
@@ -186,15 +183,13 @@ router.post(
         if (!entity) {
           res.status(200).send({
             message: 'user_email_error'
-            
           })
           return
         }
-        console.log('entity', entity)
 
         // 2. use bcrypt.compareSync to check the password against the stored hash
         if (bcrypt.compareSync(req.body.password, entity.password)) {
-        // if (req.body.password === entity.password) {
+          // if (req.body.password === entity.password) {
           // 3. if the password is correct, return a JWT with the userId of the user (user.id)
           res.send({
             // jwt: toJWT({ userId: 1 })
