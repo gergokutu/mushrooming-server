@@ -28,7 +28,9 @@ You also need to run the following commands:
 ```bash
 $ git clone
 ```
-
+```bash
+$ npm install
+```
 ```bash
 $ npm run dev
 ```
