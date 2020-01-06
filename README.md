@@ -39,7 +39,7 @@ $ npm run dev
 It will start the node server on the port `4000`
 
 ### Endpoints
-You can find all the endpoints in the ./router.js file. Endpoints is created by following the RESTful principles.
+You can find all the endpoints in the `./router.js` file. Endpoints is created by following the RESTful principles.
 
 - router.get('/stream') >> update the game in different forests
 - router.post('/forest') >> create forest
