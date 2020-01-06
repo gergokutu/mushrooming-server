@@ -213,10 +213,13 @@ router.post(
   }
 )
 
-router.get('/secret-endpoint', auth, (req, res) => {
-  res.send({
-    message: `Thanks for visiting the secret endpoint ${req.user.email}.`
-  })
-})
+router.get('/secret-endpoint', 
+  auth, 
+  (req, res) => {
+    res.send({
+      message: `Thanks for visiting the secret endpoint ${req.user.email}.`
+    })
+  }
+)
 
 module.exports = router
