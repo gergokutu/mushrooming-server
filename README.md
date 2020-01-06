@@ -23,11 +23,17 @@ using the following commands:
 ```bash
 $ docker run -p 5432:5432 --name mushrooming -e POSTGRES_PASSWORD=secret -d postgres
 ```
-- git clone
-- npm install
-- npm run dev
+You also need to run the following commands:
 
-It will start the node server on the port `5000`
+```bash
+$ git clone
+```
+
+```bash
+$ npm run dev
+```
+
+It will start the node server on the port `4000`
 
 ### Endpoints
 
